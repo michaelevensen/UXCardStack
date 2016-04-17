@@ -8,6 +8,27 @@
 
 import UIKit
 
+class CustomCollectionViewLayoutAttributes: UICollectionViewLayoutAttributes {
+    
+    var zPosition:Int = 0
+    
+    override func copyWithZone(zone: NSZone) -> AnyObject {
+        let copy = super.copyWithZone(zone) as! CustomCollectionViewLayoutAttributes
+        copy.zPosition = zPosition
+        return copy
+    }
+    
+    override func isEqual(object: AnyObject?) -> Bool {
+        if let attributes = object as? CustomCollectionViewLayoutAttributes {
+            if attributes.zPosition == zPosition {
+                return super.isEqual(object)
+            }
+        }
+        return false
+    }
+}
+
+
 /* The heights are declared as constants outside of the class so they can be easily referenced elsewhere */
 struct LayoutConstants {
     struct Cell {
