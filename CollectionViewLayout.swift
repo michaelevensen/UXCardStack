@@ -91,8 +91,6 @@ class CollectionViewLayout: UICollectionViewLayout {
             frame = CGRect(x: 0, y: y, width: width, height: height)
             frame = CGRectInset(frame, margin, 0)
             
-            attributes
-            
             /* Overlap the cells */
 //            if indexPath.item>0 {
 //                frame = CGRectInset(frame, 0, -overlap)
